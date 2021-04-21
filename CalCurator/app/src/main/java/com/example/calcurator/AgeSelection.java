@@ -23,7 +23,7 @@ public class AgeSelection extends AppCompatActivity {
      */
     public void saveAge(View view) {
         EditText inputAge = (EditText) findViewById(R.id.inputAge);
-        age = Integer.parseInt(inputAge.getText().toString());
+        this.age = Integer.parseInt(inputAge.getText().toString());
         Calculator recommendation = Calculator.getInstance();
         recommendation.setAge(age);
 

@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CalCurator">
-        <activity android:name=".ActivitySelection"></activity>
+        <activity android:name=".Settings"></activity>
+        <activity android:name=".ActivitySelection" />
         <activity android:name=".WeightSelection" />
         <activity android:name=".HeightSelection" />
         <activity android:name=".AgeSelection" />

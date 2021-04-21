@@ -1,5 +1,6 @@
 package com.example.calcurator;
 
+import android.app.Activity;
 import android.widget.EditText;
 
 public class Calculator {
@@ -15,9 +16,7 @@ public class Calculator {
         return recommendation;
     }
 
-    public Calculator() {
-
-    }
+    public Calculator() { }
 
     /**
      * Sets users gender.
@@ -67,7 +66,7 @@ public class Calculator {
      * @param weight
      * @param activity
      */
-    public void setAll(String gender, int age, int height, int weight, int activity) {
+    public void setAll(String gender, int age, int height, int weight, double activity) {
         this.gender = gender;
         this.age = age;
         this.height = height;
@@ -76,10 +75,18 @@ public class Calculator {
     }
 
     /**
+     * Sets recommended calorie intake.
+     * @param recommendedCalories
+     */
+    public void setRecommendedCalories(int recommendedCalories) {
+        this.recommendedCalories = recommendedCalories;
+    }
+
+    /**
      * Returns calculated calorie recommendation.
      * @return
      */
-    public int getRecommendation() {
+    public void calculate() {
         if(this.gender == "male") {
             this.recommendedCalories = (double) (66 + (13.7 * this.weight) + (5 * this.height) - (6.8
                     * this.age) * this.activity);
@@ -89,7 +96,9 @@ public class Calculator {
         }else {
             this.recommendedCalories = 0;
         }
+    }
 
+    public int getRecommendation() {
         return (int) this.recommendedCalories;
     }
 }

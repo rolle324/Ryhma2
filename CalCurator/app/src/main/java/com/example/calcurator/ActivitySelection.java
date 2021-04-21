@@ -40,6 +40,7 @@ public class ActivitySelection extends AppCompatActivity {
         if (this.activity != 0) {
             Calculator recommendation = Calculator.getInstance(); //Viittaus singletoniin.
             recommendation.setActivity(this.activity);
+            recommendation.calculate();
             Intent nextActivity = new Intent(this, MainActivity.class);
             startActivity(nextActivity);
         }
