@@ -98,10 +98,6 @@ public class Calculator {
         }
     }
 
-    public String toString() {
-        return this.age + " " + this.height + " " + this.weight + " " + this.activity;
-    }
-
     /**
      * Returns recommended calorie intake.
      * @return
