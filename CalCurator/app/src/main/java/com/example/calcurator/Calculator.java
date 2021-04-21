@@ -83,7 +83,7 @@ public class Calculator {
     }
 
     /**
-     * Returns calculated calorie recommendation.
+     * Calculates recommended calorie intake based on given information.
      * @return
      */
     public void calculate() {
@@ -98,6 +98,14 @@ public class Calculator {
         }
     }
 
+    public String toString() {
+        return this.age + " " + this.height + " " + this.weight + " " + this.activity;
+    }
+
+    /**
+     * Returns recommended calorie intake.
+     * @return
+     */
     public int getRecommendation() {
         return (int) this.recommendedCalories;
     }

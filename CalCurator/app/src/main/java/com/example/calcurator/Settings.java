@@ -11,8 +11,11 @@ import android.widget.TextView;
 
 public class Settings extends AppCompatActivity {
     private String gender;
+    private String ageString;
     private int age;
+    private String heightString;
     private int height;
+    private String weightString;
     private int weight;
     private double activity;
 
@@ -38,13 +41,28 @@ public class Settings extends AppCompatActivity {
         }
 
         EditText inputAge = (EditText) findViewById(R.id.inputAgeSettings);
-        this.age = Integer.parseInt(inputAge.getText().toString());
+        this.ageString = inputAge.getText().toString();
+        if (this.ageString.isEmpty()) {
+            this.age = 0;
+        } else {
+            this.age = Integer.parseInt(this.ageString);
+        }
 
         EditText inputHeight = (EditText) findViewById(R.id.inputHeightSettings);
-        this.height = Integer.parseInt(inputHeight.getText().toString());
+        this.heightString = inputHeight.getText().toString();
+        if (this.heightString.isEmpty()) {
+            this.height = 0;
+        } else {
+            this.height = Integer.parseInt(this.heightString);
+        }
 
         EditText inputWeight = (EditText) findViewById(R.id.inputWeightSettings);
-        this.weight = Integer.parseInt(inputWeight.getText().toString());
+        this.weightString = inputWeight.getText().toString();
+        if (this.weightString.isEmpty()) {
+            this.weight = 0;
+        } else {
+            this.weight = Integer.parseInt(this.weightString);
+        }
 
         RadioGroup rgActivity = (RadioGroup) findViewById(R.id.radioActivitySettings);
 
@@ -72,6 +90,8 @@ public class Settings extends AppCompatActivity {
         } else {
             tv.setText("Täytä kaikki kohdat");
         }
+
+        System.out.println(recommendation);
     }
 
     /**

@@ -27,13 +27,13 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <RadioButton
-            android:id="@+id/radioFemale"
+            android:id="@+id/radioMale"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Mies" />
 
         <RadioButton
-            android:id="@+id/radioMale"
+            android:id="@+id/radioFemale"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Nainen" />

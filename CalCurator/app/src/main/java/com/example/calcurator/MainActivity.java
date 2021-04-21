@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
         }
         TextView tv = (TextView) findViewById(R.id.tvRecommendation);
         tv.setText(Integer.toString(recommendation.getRecommendation()));
+        System.out.println(recommendation);
     }
 
     public void testiNappula(View view) {
