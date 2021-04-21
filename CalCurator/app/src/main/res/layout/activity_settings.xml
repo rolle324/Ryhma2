@@ -8,73 +8,78 @@
 
     <EditText
         android:id="@+id/inputAgeSettings"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginBottom="554dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
         android:ems="10"
         android:inputType="number"
-        android:text="Name"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="Ikä"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioGender" />
+        app:layout_constraintTop_toBottomOf="@+id/radioGenderSettings" />
 
     <EditText
         android:id="@+id/inputWeightSettings"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="311dp"
-        android:layout_marginBottom="311dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
         android:ems="10"
         android:inputType="number"
-        android:text="Name"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
+        android:text="Paino"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/inputHeightSettings" />
 
     <Button
         android:id="@+id/button"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginBottom="19dp"
-        android:text="Button"
+        android:layout_marginBottom="16dp"
+        android:onClick="goToMain"
+        android:text="CalCurator"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="1dp"
         android:layout_marginBottom="16dp"
-        android:text="Button"
+        android:text="Historia"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioActivity" />
+        app:layout_constraintEnd_toStartOf="@+id/button3"
+        app:layout_constraintStart_toEndOf="@+id/button" />
 
     <Button
         android:id="@+id/button3"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="26dp"
-        android:layout_marginBottom="19dp"
-        android:text="Button"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="Asetukset"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <EditText
         android:id="@+id/inputHeightSettings"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="13dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
         android:ems="10"
-        android:inputType="text"
-        android:text="Name"
-        app:layout_constraintEnd_toStartOf="@+id/radioActivity"
+        android:inputType="number"
+        android:text="Pituus"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/inputAgeSettings" />
 
@@ -82,85 +87,108 @@
         android:id="@+id/button4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="52dp"
+        android:layout_marginTop="16dp"
         android:onClick="save"
         android:text="Button"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
-        app:layout_constraintStart_toStartOf="@+id/button2" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioActivitySettings" />
 
     <RadioGroup
-        android:id="@+id/radioGender"
-        android:layout_width="110dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="23dp"
-        android:layout_marginEnd="23dp"
-        android:layout_marginBottom="9dp"
-        app:layout_constraintBottom_toTopOf="@+id/inputAgeSettings"
-        app:layout_constraintEnd_toEndOf="@+id/inputAgeSettings"
+        android:id="@+id/radioGenderSettings"
+        android:layout_width="0dp"
+        android:layout_height="97dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvGenderSettings"
         app:layout_constraintTop_toTopOf="parent">
 
         <RadioButton
             android:id="@+id/radioMaleSettings"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="RadioButton" />
+            android:text="Mies" />
 
         <RadioButton
             android:id="@+id/radioFemaleSettings"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="RadioButton" />
+            android:text="Nainen" />
     </RadioGroup>
 
     <RadioGroup
-        android:id="@+id/radioActivity"
+        android:id="@+id/radioActivitySettings"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="203dp"
-        android:layout_marginEnd="36dp"
-        android:layout_marginBottom="216dp"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
+        android:layout_height="234dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/inputHeightSettings"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintStart_toEndOf="@+id/tvActivitySettings"
+        app:layout_constraintTop_toBottomOf="@+id/inputWeightSettings">
 
         <RadioButton
             android:id="@+id/radioLevel1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="RadioButton" />
+            android:text="Ei aktiivisuutta" />
 
         <RadioButton
             android:id="@+id/radioLevel2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="RadioButton" />
+            android:text="Vähäinen aktiivisuus" />
 
         <RadioButton
             android:id="@+id/radioLevel3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="RadioButton" />
+            android:text="Kohtalainen aktiivisuus" />
 
         <RadioButton
             android:id="@+id/radioLevel4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="RadioButton" />
+            android:text="Runsas aktiivisuus" />
 
         <RadioButton
             android:id="@+id/radioLevel5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="RadioButton" />
+            android:text="Erityisen runsas aktiivisuus" />
     </RadioGroup>
 
     <TextView
         android:id="@+id/tvConfirmation"
+        android:layout_width="0dp"
+        android:layout_height="21dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button4" />
+
+    <TextView
+        android:id="@+id/tvGenderSettings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="13dp"
-        android:layout_marginBottom="38dp"
-        app:layout_constraintBottom_toTopOf="@+id/button4"
-        app:layout_constraintStart_toStartOf="@+id/button4" />
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="54dp"
+        android:text="Sukupuoli"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvActivitySettings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="125dp"
+        android:text="Aktiivisuus"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputWeightSettings" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

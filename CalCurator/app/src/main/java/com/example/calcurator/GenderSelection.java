@@ -21,7 +21,7 @@ public class GenderSelection extends AppCompatActivity {
      * @param view
      */
     public void saveGender(View view) {
-        RadioGroup rgGender = (RadioGroup) findViewById(R.id.radioGender);
+        RadioGroup rgGender = (RadioGroup) findViewById(R.id.radioGenderSettings);
 
         if (rgGender.getCheckedRadioButtonId() == R.id.radioMale) {
             this.gender = "male";

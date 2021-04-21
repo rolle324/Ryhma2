@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
@@ -23,5 +24,8 @@ public class MainActivity extends AppCompatActivity {
         tv.setText(Integer.toString(recommendation.getRecommendation()));
     }
 
-
+    public void testiNappula(View view) {
+        Intent intent = new Intent(this, Settings.class);
+        startActivity(intent);
+    }
 }
