@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Calculator recommendation = Calculator.getInstance();
+        recommendation.setRecommendedCalories(1000);
         if (recommendation.getRecommendation() == 0) {
             Intent intent = new Intent(this, GenderSelection.class);
             startActivity(intent);

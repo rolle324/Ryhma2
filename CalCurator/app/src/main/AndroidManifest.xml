@@ -8,9 +8,9 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:exported="true"
         android:theme="@style/Theme.CalCurator">
         <activity android:name=".Activityhistorylist"></activity>
+        <activity android:name=".Settings"></activity>
         <activity android:name=".ActivitySelection" />
         <activity android:name=".WeightSelection" />
         <activity android:name=".HeightSelection" />
