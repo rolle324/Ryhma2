@@ -7,8 +7,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -26,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         System.out.println(recommendation);
     }
 
-    public void testiNappula(View view) {
+    public void goToSettings(View view) {
         Intent intent = new Intent(this, Settings.class);
         startActivity(intent);
     }
