@@ -106,7 +106,7 @@ public class Settings extends AppCompatActivity {
      * Go to History.
      */
     public void goToHistory(View view) {
-        Intent intent = new Intent(this, Activityhistorylist.class);
+        Intent intent = new Intent(this, History.class);
         startActivity(intent);
     }
 }
