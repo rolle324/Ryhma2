@@ -24,7 +24,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="9dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="12dp"
+        android:layout_marginBottom="11dp"
+        android:onClick="goToCalcurator"
         android:text="CalCurator"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btnHistory"
@@ -36,6 +37,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="14dp"
+        android:onClick="goToHistory"
         android:text="Historia"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btnSettings"
@@ -50,7 +52,7 @@
         android:layout_marginBottom="50dp"
         android:onClick="saveDay"
         android:text="LISÄÄ ATERIA"
-        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintBottom_toTopOf="@+id/tvRecommendationText"
         app:layout_constraintEnd_toEndOf="@+id/tvRecommendation"
         app:layout_constraintTop_toBottomOf="@+id/tvCalories" />
 
@@ -59,15 +61,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="27dp"
-        android:layout_marginTop="252dp"
+        android:layout_marginBottom="30dp"
         android:ems="10"
         android:hint="Bambu"
         android:inputType="textPersonName"
-        app:layout_constraintStart_toEndOf="@+id/tvFood"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toTopOf="@+id/inputCalories"
+        app:layout_constraintStart_toEndOf="@+id/tvMeal" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/tvRecommendationText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="44dp"
@@ -83,59 +85,56 @@
         android:layout_marginBottom="187dp"
         android:text="Suos. Kalorit"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView" />
+        app:layout_constraintStart_toEndOf="@+id/tvRecommendationText" />
 
     <TextView
-        android:id="@+id/tvOwnCal"
+        android:id="@+id/tvIntake"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
         android:layout_marginTop="29dp"
-        android:text="Omat Kalorit"
-        app:layout_constraintStart_toEndOf="@+id/textView2"
+        app:layout_constraintEnd_toStartOf="@+id/tvRecommendation"
+        app:layout_constraintStart_toStartOf="@+id/tvRecommendation"
         app:layout_constraintTop_toBottomOf="@+id/tvRecommendation" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/tvIntakeText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
         android:text="Saadut kalorit:"
-        app:layout_constraintBaseline_toBaselineOf="@+id/tvOwnCal"
-        app:layout_constraintEnd_toEndOf="@+id/textView" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/tvIntake"
+        app:layout_constraintEnd_toEndOf="@+id/tvIntake" />
 
     <TextView
         android:id="@+id/tvDay"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="17dp"
-        android:layout_marginTop="112dp"
-        android:layout_marginBottom="108dp"
         android:text="Päivä"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/inpuMeal"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/inputDate"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/inputCalories"
         android:layout_width="102dp"
         android:layout_height="52dp"
-        android:layout_marginTop="30dp"
         android:layout_marginEnd="12dp"
         android:ems="10"
         android:inputType="number"
-        app:layout_constraintEnd_toStartOf="@+id/textView6"
-        app:layout_constraintTop_toBottomOf="@+id/inpuMeal" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/tvKcal"
+        app:layout_constraintEnd_toStartOf="@+id/tvKcal" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/tvKcal"
         android:layout_width="104dp"
         android:layout_height="26dp"
+        android:layout_marginTop="341dp"
         android:layout_marginEnd="53dp"
         android:text="kcal"
         android:textSize="18sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/inputCalories"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tvCalories"
@@ -151,7 +150,7 @@
         app:layout_constraintTop_toTopOf="@+id/inputCalories" />
 
     <TextView
-        android:id="@+id/tvFood"
+        android:id="@+id/tvMeal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="9dp"
@@ -166,9 +165,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
+        android:layout_marginTop="109dp"
+        android:layout_marginBottom="110dp"
         android:ems="10"
         android:inputType="date"
-        app:layout_constraintBaseline_toBaselineOf="@+id/tvDay"
-        app:layout_constraintStart_toEndOf="@+id/tvDay" />
+        app:layout_constraintBottom_toTopOf="@+id/tvMeal"
+        app:layout_constraintStart_toEndOf="@+id/tvDay"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

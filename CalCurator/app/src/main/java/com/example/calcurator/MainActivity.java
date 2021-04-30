@@ -2,7 +2,9 @@ package com.example.calcurator;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -10,6 +12,7 @@ import android.widget.TextView;
 
 import com.example.calcurator.history.BookOfDays;
 import com.example.calcurator.history.Day;
+import com.example.calcurator.history.History;
 import com.example.calcurator.history.SaveMeal;
 import com.example.calcurator.userdata.Calculator;
 import com.example.calcurator.userdata.GenderSelection;
@@ -25,15 +28,22 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         Calculator recommendation = Calculator.getInstance();
-        recommendation.setRecommendedCalories(1000);
+
+        if (recommendation.getRecommendation() == 0) {
+            SharedPreferences prefGet = getSharedPreferences("SaveRecommendation", Activity.MODE_PRIVATE);
+            recommendation.setRecommendedCalories(prefGet.getInt("Recommendation", 0));
+        }
+
         if (recommendation.getRecommendation() == 0) {
             Intent intent = new Intent(this, GenderSelection.class);
             startActivity(intent);
         }
-        TextView tv = (TextView) findViewById(R.id.tvRecommendation);
-        tv.setText(Integer.toString(recommendation.getRecommendation()));
-        System.out.println(recommendation);
+
+        TextView tvRecommendation = (TextView) findViewById(R.id.tvRecommendation);
+        tvRecommendation.setText(Integer.toString(recommendation.getRecommendation()));
+        updateCalories();
     }
     
     public void saveDay(View view) {
@@ -46,10 +56,39 @@ public class MainActivity extends AppCompatActivity {
         this.calories = Integer.parseInt(inputCalories.getText().toString());
 
         save.saveMeal(date, meal, calories);
+        updateCalories();
+    }
+
+    public void goToCalcurator(View view) {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+
+    public void goToHistory(View view) {
+        Intent intent = new Intent(this, History.class);
+        startActivity(intent);
     }
 
     public void goToSettings(View view) {
         Intent intent = new Intent(this, Settings.class);
         startActivity(intent);
+    }
+
+    public void updateCalories() {
+        BookOfDays days = BookOfDays.getInstance();
+        TextView tvIntake = (TextView) findViewById(R.id.tvIntake);
+        int i = days.getAllDays().size() - 1;
+        tvIntake.setText(Integer.toString(days.getDay(i).getCalories()));
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Calculator recommendation = Calculator.getInstance();
+
+        SharedPreferences prefPut = getSharedPreferences("SaveRecommendation", Activity.MODE_PRIVATE);
+        SharedPreferences.Editor prefEditor = prefPut.edit();
+        prefEditor.putInt("Recommendation", recommendation.getRecommendation());
+        prefEditor.commit();
     }
 }
