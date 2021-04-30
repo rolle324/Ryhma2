@@ -24,8 +24,12 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="9dp"
         android:layout_marginEnd="16dp"
+<<<<<<< HEAD
         android:layout_marginBottom="11dp"
         android:onClick="goToCalcurator"
+=======
+        android:layout_marginBottom="12dp"
+>>>>>>> d25eda2e823eb6bb3159e3d3f057cb79aca19edf
         android:text="CalCurator"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btnHistory"
@@ -37,7 +41,10 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="14dp"
+<<<<<<< HEAD
         android:onClick="goToHistory"
+=======
+>>>>>>> d25eda2e823eb6bb3159e3d3f057cb79aca19edf
         android:text="Historia"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btnSettings"
@@ -50,13 +57,19 @@
         android:layout_marginTop="49dp"
         android:layout_marginEnd="30dp"
         android:layout_marginBottom="50dp"
+<<<<<<< HEAD
         android:onClick="saveDay"
         android:text="LISÄÄ ATERIA"
         app:layout_constraintBottom_toTopOf="@+id/tvRecommendationText"
+=======
+        android:text="LISÄÄ ATERIA"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+>>>>>>> d25eda2e823eb6bb3159e3d3f057cb79aca19edf
         app:layout_constraintEnd_toEndOf="@+id/tvRecommendation"
         app:layout_constraintTop_toBottomOf="@+id/tvCalories" />
 
     <EditText
+<<<<<<< HEAD
         android:id="@+id/inpuMeal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -70,6 +83,21 @@
 
     <TextView
         android:id="@+id/tvRecommendationText"
+=======
+        android:id="@+id/inputFood"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="252dp"
+        android:ems="10"
+        android:hint="Bambu"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toEndOf="@+id/tvFood"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+>>>>>>> d25eda2e823eb6bb3159e3d3f057cb79aca19edf
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="44dp"
@@ -85,6 +113,7 @@
         android:layout_marginBottom="187dp"
         android:text="Suos. Kalorit"
         app:layout_constraintBottom_toBottomOf="parent"
+<<<<<<< HEAD
         app:layout_constraintStart_toEndOf="@+id/tvRecommendationText" />
 
     <TextView
@@ -104,21 +133,53 @@
         android:text="Saadut kalorit:"
         app:layout_constraintBaseline_toBaselineOf="@+id/tvIntake"
         app:layout_constraintEnd_toEndOf="@+id/tvIntake" />
+=======
+        app:layout_constraintStart_toEndOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/tvOwnCal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="29dp"
+        android:text="Omat Kalorit"
+        app:layout_constraintStart_toEndOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/tvRecommendation" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Saadut kalorit:"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tvOwnCal"
+        app:layout_constraintEnd_toEndOf="@+id/textView" />
+>>>>>>> d25eda2e823eb6bb3159e3d3f057cb79aca19edf
 
     <TextView
         android:id="@+id/tvDay"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="17dp"
+<<<<<<< HEAD
         android:text="Päivä"
         android:textSize="24sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/inputDate"
         app:layout_constraintStart_toStartOf="parent" />
+=======
+        android:layout_marginTop="112dp"
+        android:layout_marginBottom="108dp"
+        android:text="Päivä"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/inputFood"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+>>>>>>> d25eda2e823eb6bb3159e3d3f057cb79aca19edf
 
     <EditText
         android:id="@+id/inputCalories"
         android:layout_width="102dp"
         android:layout_height="52dp"
+<<<<<<< HEAD
         android:layout_marginEnd="12dp"
         android:ems="10"
         android:inputType="number"
@@ -135,6 +196,24 @@
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+=======
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="12dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintEnd_toStartOf="@+id/textView6"
+        app:layout_constraintTop_toBottomOf="@+id/inputFood" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="104dp"
+        android:layout_height="26dp"
+        android:layout_marginEnd="53dp"
+        android:text="kcal"
+        android:textSize="18sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/inputCalories"
+        app:layout_constraintEnd_toEndOf="parent" />
+>>>>>>> d25eda2e823eb6bb3159e3d3f057cb79aca19edf
 
     <TextView
         android:id="@+id/tvCalories"
@@ -150,13 +229,18 @@
         app:layout_constraintTop_toTopOf="@+id/inputCalories" />
 
     <TextView
+<<<<<<< HEAD
         android:id="@+id/tvMeal"
+=======
+        android:id="@+id/tvFood"
+>>>>>>> d25eda2e823eb6bb3159e3d3f057cb79aca19edf
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="9dp"
         android:layout_marginBottom="1dp"
         android:text="Ruoka"
         android:textSize="24sp"
+<<<<<<< HEAD
         app:layout_constraintBottom_toBottomOf="@+id/inpuMeal"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -172,5 +256,19 @@
         app:layout_constraintBottom_toTopOf="@+id/tvMeal"
         app:layout_constraintStart_toEndOf="@+id/tvDay"
         app:layout_constraintTop_toTopOf="parent" />
+=======
+        app:layout_constraintBottom_toBottomOf="@+id/inputFood"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextDate2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:ems="10"
+        android:inputType="date"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tvDay"
+        app:layout_constraintStart_toEndOf="@+id/tvDay" />
+>>>>>>> d25eda2e823eb6bb3159e3d3f057cb79aca19edf
 
 </androidx.constraintlayout.widget.ConstraintLayout>

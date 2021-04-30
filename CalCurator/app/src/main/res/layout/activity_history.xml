@@ -4,7 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+<<<<<<< HEAD
     tools:context=".history.History">
+=======
+    tools:context=".History">
+>>>>>>> d25eda2e823eb6bb3159e3d3f057cb79aca19edf
 
     <ListView
         android:id="@+id/lvHistory"

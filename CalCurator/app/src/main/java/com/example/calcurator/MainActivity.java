@@ -2,6 +2,7 @@ package com.example.calcurator;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+<<<<<<< HEAD
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -23,11 +24,20 @@ public class MainActivity extends AppCompatActivity {
     private String meal;
     private int calories;
     private SaveMeal save = new SaveMeal();
+=======
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
+
+public class MainActivity extends AppCompatActivity {
+>>>>>>> d25eda2e823eb6bb3159e3d3f057cb79aca19edf
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+<<<<<<< HEAD
 
         Calculator recommendation = Calculator.getInstance();
 
@@ -86,10 +96,24 @@ public class MainActivity extends AppCompatActivity {
      * Move to settings
      * @param view
      */
+=======
+        Calculator recommendation = Calculator.getInstance();
+        recommendation.setRecommendedCalories(1000);
+        if (recommendation.getRecommendation() == 0) {
+            Intent intent = new Intent(this, GenderSelection.class);
+            startActivity(intent);
+        }
+        TextView tv = (TextView) findViewById(R.id.tvRecommendation);
+        tv.setText(Integer.toString(recommendation.getRecommendation()));
+        System.out.println(recommendation);
+    }
+
+>>>>>>> d25eda2e823eb6bb3159e3d3f057cb79aca19edf
     public void goToSettings(View view) {
         Intent intent = new Intent(this, Settings.class);
         startActivity(intent);
     }
+<<<<<<< HEAD
 
     /**
      * Updates calorie intake TextView
@@ -114,4 +138,6 @@ public class MainActivity extends AppCompatActivity {
         prefEditor.putInt("Recommendation", recommendation.getRecommendation());
         prefEditor.commit();
     }
+=======
+>>>>>>> d25eda2e823eb6bb3159e3d3f057cb79aca19edf
 }
