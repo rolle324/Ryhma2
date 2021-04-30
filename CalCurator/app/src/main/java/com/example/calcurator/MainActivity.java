@@ -31,21 +31,26 @@ public class MainActivity extends AppCompatActivity {
 
         Calculator recommendation = Calculator.getInstance();
 
+        //Loads calorie recommendation
         if (recommendation.getRecommendation() == 0) {
             SharedPreferences prefGet = getSharedPreferences("SaveRecommendation", Activity.MODE_PRIVATE);
             recommendation.setRecommendedCalories(prefGet.getInt("Recommendation", 0));
-        }
-
-        if (recommendation.getRecommendation() == 0) {
-            Intent intent = new Intent(this, GenderSelection.class);
-            startActivity(intent);
+            //Goes to user data collection if recommendation is still 0
+            if (recommendation.getRecommendation() == 0) {
+                Intent intent = new Intent(this, GenderSelection.class);
+                startActivity(intent);
+            }
         }
 
         TextView tvRecommendation = (TextView) findViewById(R.id.tvRecommendation);
         tvRecommendation.setText(Integer.toString(recommendation.getRecommendation()));
         updateCalories();
     }
-    
+
+    /**
+     * Reads meal information and saves it to a day object
+     * @param view
+     */
     public void saveDay(View view) {
         EditText inputDate = (EditText) findViewById(R.id.inputDate);
         EditText inputMeal = (EditText) findViewById(R.id.inpuMeal);
@@ -59,21 +64,36 @@ public class MainActivity extends AppCompatActivity {
         updateCalories();
     }
 
+    /**
+     * Move to Main Activity
+     * @param view
+     */
     public void goToCalcurator(View view) {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
 
+    /**
+     * Move to History
+     * @param view
+     */
     public void goToHistory(View view) {
         Intent intent = new Intent(this, History.class);
         startActivity(intent);
     }
 
+    /**
+     * Move to settings
+     * @param view
+     */
     public void goToSettings(View view) {
         Intent intent = new Intent(this, Settings.class);
         startActivity(intent);
     }
 
+    /**
+     * Updates calorie intake TextView
+     */
     public void updateCalories() {
         BookOfDays days = BookOfDays.getInstance();
         TextView tvIntake = (TextView) findViewById(R.id.tvIntake);
@@ -81,6 +101,9 @@ public class MainActivity extends AppCompatActivity {
         tvIntake.setText(Integer.toString(days.getDay(i).getCalories()));
     }
 
+    /**
+     * Saves calorie recommendation on pause
+     */
     @Override
     protected void onPause() {
         super.onPause();
