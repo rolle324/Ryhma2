@@ -1,7 +1,4 @@
-package com.example.calcurator;
-
-import android.app.Activity;
-import android.widget.EditText;
+package com.example.calcurator.userdata;
 
 public class Calculator {
     private static final Calculator recommendation = new Calculator();

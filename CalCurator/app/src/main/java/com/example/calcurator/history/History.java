@@ -1,4 +1,4 @@
-package com.example.calcurator;
+package com.example.calcurator.history;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+
+import com.example.calcurator.R;
 
 /*
 Luo luokka jolla mallenetaan presidenttiä

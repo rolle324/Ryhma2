@@ -48,13 +48,14 @@
         android:layout_marginTop="49dp"
         android:layout_marginEnd="30dp"
         android:layout_marginBottom="50dp"
+        android:onClick="saveDay"
         android:text="LISÄÄ ATERIA"
         app:layout_constraintBottom_toTopOf="@+id/textView"
         app:layout_constraintEnd_toEndOf="@+id/tvRecommendation"
         app:layout_constraintTop_toBottomOf="@+id/tvCalories" />
 
     <EditText
-        android:id="@+id/inputFood"
+        android:id="@+id/inpuMeal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="27dp"
@@ -111,7 +112,7 @@
         android:layout_marginBottom="108dp"
         android:text="Päivä"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/inputFood"
+        app:layout_constraintBottom_toTopOf="@+id/inpuMeal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -124,7 +125,7 @@
         android:ems="10"
         android:inputType="number"
         app:layout_constraintEnd_toStartOf="@+id/textView6"
-        app:layout_constraintTop_toBottomOf="@+id/inputFood" />
+        app:layout_constraintTop_toBottomOf="@+id/inpuMeal" />
 
     <TextView
         android:id="@+id/textView6"
@@ -157,11 +158,11 @@
         android:layout_marginBottom="1dp"
         android:text="Ruoka"
         android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="@+id/inputFood"
+        app:layout_constraintBottom_toBottomOf="@+id/inpuMeal"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/editTextDate2"
+        android:id="@+id/inputDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"

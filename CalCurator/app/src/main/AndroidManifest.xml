@@ -9,14 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CalCurator">
-        <activity android:name=".HistoryDetails"></activity>
-        <activity android:name=".History" />
-        <activity android:name=".Settings" />
-        <activity android:name=".ActivitySelection" />
-        <activity android:name=".WeightSelection" />
-        <activity android:name=".HeightSelection" />
-        <activity android:name=".AgeSelection" />
-        <activity android:name=".GenderSelection" />
+        <activity android:name=".history.HistoryDetails"></activity>
+        <activity android:name=".history.History" />
+        <activity android:name=".userdata.Settings" />
+        <activity android:name=".userdata.ActivitySelection" />
+        <activity android:name=".userdata.WeightSelection" />
+        <activity android:name=".userdata.HeightSelection" />
+        <activity android:name=".userdata.AgeSelection" />
+        <activity android:name=".userdata.GenderSelection" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

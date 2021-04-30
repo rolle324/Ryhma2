@@ -1,4 +1,4 @@
-package com.example.calcurator;
+package com.example.calcurator.userdata;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,6 +6,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.RadioGroup;
+
+import com.example.calcurator.MainActivity;
+import com.example.calcurator.R;
 
 public class ActivitySelection extends AppCompatActivity {
     private double activity;

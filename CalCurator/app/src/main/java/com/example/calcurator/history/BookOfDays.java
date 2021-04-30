@@ -1,4 +1,4 @@
-package com.example.calcurator;
+package com.example.calcurator.history;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,15 +6,15 @@ import java.util.List;
 public class BookOfDays {
 
 private static final BookOfDays BookOfDays = new BookOfDays();
-/**
- * Gets reference to singleton data
- */
 
-public static BookOfDays getInstance() { return BookOfDays;}
+    /**
+    * Gets reference to singleton data
+    */
+    public static BookOfDays getInstance() { return BookOfDays;}
 
-private List<Day> allDays;
+    private List<Day> allDays;
 
-//Rakentaja
+    //Rakentaja
 
     private BookOfDays(){
         allDays = new ArrayList<>();
@@ -31,7 +31,7 @@ private List<Day> allDays;
         return this.allDays;
     }
 
-public Day getDay(int indexOfDay){
+    public Day getDay(int indexOfDay){
         return this.allDays.get(indexOfDay);
 }
 

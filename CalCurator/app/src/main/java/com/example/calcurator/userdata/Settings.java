@@ -1,4 +1,4 @@
-package com.example.calcurator;
+package com.example.calcurator.userdata;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,6 +8,10 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+
+import com.example.calcurator.history.History;
+import com.example.calcurator.MainActivity;
+import com.example.calcurator.R;
 
 public class Settings extends AppCompatActivity {
     private String gender;
