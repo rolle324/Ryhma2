@@ -1,6 +1,9 @@
 package com.example.calcurator.history;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 
 public class Day {
 
@@ -8,6 +11,7 @@ public class Day {
     private int totalCalories = 0;
     private String date;
     private String allMeals = "";
+
 
 
     //Rakentaja
@@ -25,7 +29,11 @@ public class Day {
      * @param calories
      */
     public void addMeal(String meal, int calories) {
-        this.allMeals = this.allMeals + meal + ": " + calories + " kcal\n\n";
+        Calendar calendar = Calendar.getInstance();
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("hh:mm:ss a");
+        String dateTime = simpleDateFormat.format(calendar.getTime());
+
+        this.allMeals = this.allMeals + meal + ": " + calories + " kcal " + dateTime + "\n\n" ;
         this.totalCalories = totalCalories + calories;
     }
 

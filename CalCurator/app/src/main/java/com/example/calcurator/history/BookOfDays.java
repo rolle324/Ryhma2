@@ -43,6 +43,8 @@ private static final BookOfDays BookOfDays = new BookOfDays();
      * @param indexOfDay
      * @return
      */
+
+
     public Day getDay(int indexOfDay){
         return this.allDays.get(indexOfDay);
     }
