@@ -89,17 +89,17 @@ public class Settings extends AppCompatActivity {
         recommendation.calculate();
 
         TextView tv = (TextView) findViewById(R.id.tvConfirmation);
-        if (recommendation.getRecommendation() != 0) {
-            tv.setText("Asetukset tallennettu.");
+        if (this.gender.equals("null") || this.age == 0 || this.height == 0 || this.weight == 0 || this.activity == 0) {
+            tv.setText("Täytä kaikki kohdat.");
         } else {
-            tv.setText("Täytä kaikki kohdat");
+            tv.setText("Asetukset tallennettu.");
         }
 
         System.out.println(recommendation);
     }
 
     /**
-     * Go to MainActivity.
+     * Moves to Main Activity.
      */
     public void goToMain(View view) {
         Intent intent = new Intent(this, MainActivity.class);
@@ -107,10 +107,18 @@ public class Settings extends AppCompatActivity {
     }
 
     /**
-     * Go to History.
+     * Moves to History.
      */
     public void goToHistory(View view) {
         Intent intent = new Intent(this, History.class);
+        startActivity(intent);
+    }
+
+    /**
+     * Moves to Settings.
+     */
+    public void goToSettings(View view) {
+        Intent intent = new Intent(this, Settings.class);
         startActivity(intent);
     }
 }

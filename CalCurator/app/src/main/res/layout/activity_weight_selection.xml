@@ -4,11 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-<<<<<<< HEAD
     tools:context=".userdata.WeightSelection">
-=======
-    tools:context=".WeightSelection">
->>>>>>> d25eda2e823eb6bb3159e3d3f057cb79aca19edf
 
     <Button
         android:id="@+id/saveWeight"
@@ -56,4 +52,13 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvWeightWarning"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputWeight" />
 </androidx.constraintlayout.widget.ConstraintLayout>

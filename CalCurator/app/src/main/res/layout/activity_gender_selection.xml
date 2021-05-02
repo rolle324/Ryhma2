@@ -4,11 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-<<<<<<< HEAD
     tools:context=".userdata.GenderSelection">
-=======
-    tools:context=".GenderSelection">
->>>>>>> d25eda2e823eb6bb3159e3d3f057cb79aca19edf
 
     <Button
         android:id="@+id/saveGender"

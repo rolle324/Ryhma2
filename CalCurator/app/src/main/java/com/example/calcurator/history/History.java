@@ -10,7 +10,9 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.example.calcurator.MainActivity;
 import com.example.calcurator.R;
+import com.example.calcurator.userdata.Settings;
 
 public class History extends AppCompatActivity {
 
@@ -18,7 +20,6 @@ public class History extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_history);
-
 
         //Initializing ListView
         ListView lv = findViewById(R.id.lvHistory);
@@ -32,9 +33,36 @@ public class History extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l){
                 Intent nextActivity = new Intent(History.this, HistoryDetails.class);
-                nextActivity.putExtra("HistoryIndex",i);
+                nextActivity.putExtra("HistoryIndex", i);
                 startActivity(nextActivity);
             }
         });
+    }
+
+    /**
+     * Moves to Main Activity
+     * @param view
+     */
+    public void goToCalcurator(View view) {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+
+    /**
+     * Moves to History
+     * @param view
+     */
+    public void goToHistory(View view) {
+        Intent intent = new Intent(this, History.class);
+        startActivity(intent);
+    }
+
+    /**
+     * Moves to settings
+     * @param view
+     */
+    public void goToSettings(View view) {
+        Intent intent = new Intent(this, Settings.class);
+        startActivity(intent);
     }
 }

@@ -6,11 +6,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.example.calcurator.R;
 
 public class AgeSelection extends AppCompatActivity {
     private int age;
+    private String ageString;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,11 +26,23 @@ public class AgeSelection extends AppCompatActivity {
      */
     public void saveAge(View view) {
         EditText inputAge = (EditText) findViewById(R.id.inputAge);
-        this.age = Integer.parseInt(inputAge.getText().toString());
-        Calculator recommendation = Calculator.getInstance();
-        recommendation.setAge(age);
 
-        Intent intent = new Intent(this, HeightSelection.class);
-        startActivity(intent);
+        //Checking if the text field is empty.
+        this.ageString = inputAge.getText().toString();
+        if (this.ageString.isEmpty()) {
+            this.age = 0;
+        } else {
+            this.age = Integer.parseInt(this.ageString);
+        }
+
+        if (this.age == 0) {
+            TextView tv = (TextView) findViewById(R.id.tvAgeWarning);
+            tv.setText("Täytä kaikki kohdat.");
+        } else {
+            Calculator recommendation = Calculator.getInstance();
+            recommendation.setAge(this.age);
+            Intent intent = new Intent(this, HeightSelection.class);
+            startActivity(intent);
+        }
     }
 }

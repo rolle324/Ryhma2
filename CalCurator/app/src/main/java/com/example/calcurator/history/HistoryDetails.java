@@ -16,19 +16,14 @@ public class HistoryDetails extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_history_details);
 
-        //Luetaan klikatun pressan indeksi intentin datasta
-        Bundle b = getIntent().getExtras();
-        int ind =   b.getInt("HistoryIndex");
+        //Reading index of day.
+        Bundle bundle = getIntent().getExtras();
+        int index = bundle.getInt("HistoryIndex");
 
-        //Textview
+        //Writing all days into the ListView
         TextView tv= findViewById(R.id.tvDetails);
-
-        //Kirjoitetaan textviewiin kaikki pressan tiedot
         BookOfDays days = BookOfDays.getInstance();
-        //b. varastosta haluttu presidentti-olio
-        Day d = days.getDay(ind);
-        //c. Pressan kaikki tiedot näkyviin
-        //tv.setText(d.getDate()+", " + d.getmeal() +", "+ d.getcalories());
-        tv.setText(d.getAllMeals());
+        Day day = days.getDay(index);
+        tv.setText(day.getAllMeals());
     }
 }

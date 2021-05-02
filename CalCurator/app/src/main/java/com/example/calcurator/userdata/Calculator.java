@@ -9,11 +9,15 @@ public class Calculator {
     private double activity;
     private double recommendedCalories;
 
+    /**
+     * Gets reference to singleton data.
+     * @return
+     */
     public static Calculator getInstance() {
         return recommendation;
     }
 
-    public Calculator() { }
+    private Calculator() { }
 
     /**
      * Sets users gender.

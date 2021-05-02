@@ -4,11 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-<<<<<<< HEAD
     tools:context=".userdata.ActivitySelection">
-=======
-    tools:context=".ActivitySelection">
->>>>>>> d25eda2e823eb6bb3159e3d3f057cb79aca19edf
 
     <RadioGroup
         android:id="@+id/radioActivityLevel"
@@ -56,7 +52,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
-        android:onClick="saveGender"
+        android:onClick="saveActivity"
         android:text="Seuraava"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />

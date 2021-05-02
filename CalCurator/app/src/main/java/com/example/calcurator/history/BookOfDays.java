@@ -1,7 +1,9 @@
 package com.example.calcurator.history;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
+import com.example.calcurator.MainActivity;
 
 public class BookOfDays {
 
@@ -17,13 +19,11 @@ private static final BookOfDays BookOfDays = new BookOfDays();
     //Rakentaja
     private BookOfDays(){
         allDays = new ArrayList<>();
-
-        allDays.add(new Day("26/04/2021", "Nokkosia", 5000));
     }
 
     //Metodit
     /**
-     * Add a day to the list of days
+     * Adds a day to the list of days
      * @param day
      */
     public void addDay(Day day){
@@ -31,7 +31,7 @@ private static final BookOfDays BookOfDays = new BookOfDays();
     }
 
     /**
-     * Get the complete list of days
+     * Gets the complete list of days
      * @return
      */
     public List<Day> getAllDays() {
@@ -39,11 +39,15 @@ private static final BookOfDays BookOfDays = new BookOfDays();
     }
 
     /**
-     * Get a specific day from the list of days
+     * Gets a specific day from the list of days
      * @param indexOfDay
      * @return
      */
     public Day getDay(int indexOfDay){
         return this.allDays.get(indexOfDay);
+    }
+
+    public void setAllDays(List<Day> list) {
+        this.allDays = list;
     }
 }

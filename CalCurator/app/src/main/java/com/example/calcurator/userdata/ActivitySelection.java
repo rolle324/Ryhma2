@@ -23,7 +23,7 @@ public class ActivitySelection extends AppCompatActivity {
      * Adds activity level to recommendation singleton.
      * @param view
      */
-    public void saveGender(View view) {
+    public void saveActivity(View view) {
         RadioGroup radioActivityLevel = (RadioGroup) findViewById(R.id.radioActivityLevel);
 
         if (radioActivityLevel.getCheckedRadioButtonId() == R.id.radio1) {

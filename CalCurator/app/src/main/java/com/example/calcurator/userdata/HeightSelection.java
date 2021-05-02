@@ -6,11 +6,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.example.calcurator.R;
 
 public class HeightSelection extends AppCompatActivity {
     private int height;
+    private String heightString;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,11 +25,23 @@ public class HeightSelection extends AppCompatActivity {
      */
     public void saveHeight(View view) {
         EditText inputHeight = (EditText) findViewById(R.id.inputHeight);
-        height = Integer.parseInt(inputHeight.getText().toString());
-        Calculator recommendation = Calculator.getInstance();
-        recommendation.setHeight(height);
 
-        Intent intent = new Intent(this, WeightSelection.class);
-        startActivity(intent);
+        //Checking if the text field is empty.
+        this.heightString = inputHeight.getText().toString();
+        if (this.heightString.isEmpty()) {
+            this.height = 0;
+        } else {
+            this.height = Integer.parseInt(this.heightString);
+        }
+
+        if (this.height == 0) {
+            TextView tv = (TextView) findViewById(R.id.tvHeightWarning);
+            tv.setText("Täytä kaikki kohdat.");
+        } else {
+            Calculator recommendation = Calculator.getInstance();
+            recommendation.setHeight(this.height);
+            Intent intent = new Intent(this, WeightSelection.class);
+            startActivity(intent);
+        }
     }
 }
