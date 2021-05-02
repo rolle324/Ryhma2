@@ -16,8 +16,12 @@ public class Day {
 
     //Rakentaja
     public Day(String date, String meal, int calories) {
+        Calendar calendar = Calendar.getInstance();
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("hh:mm:ss a");
+        String dateTime = simpleDateFormat.format(calendar.getTime());
+
         this.date = date;
-        this.allMeals = meal + ": " + calories + " kcal\n\n";
+        this.allMeals = meal + ": " + calories + " kcal " + dateTime + "\n\n";
         this.totalCalories = this.totalCalories + calories;
     }
 
