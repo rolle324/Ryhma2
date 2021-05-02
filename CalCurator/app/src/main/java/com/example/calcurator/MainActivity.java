@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO); //From stackoverflow.com
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -50,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
         tvRecommendation.setText(Integer.toString(recommendation.getRecommendation()));
 
         EditText inputDate = (EditText) findViewById(R.id.inputDate);
+        //https://stackoverflow.com/questions/17672150/how-to-show-current-date-in-edittext-view
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
         inputDate.setText(dateFormat.format(new Date()));
 
@@ -157,7 +158,7 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences prefGet = getSharedPreferences("Save", Activity.MODE_PRIVATE);
         String jsonDays = prefGet.getString("Days", "null");
         if (!jsonDays.equals("null")) {
-            //This is copied from lecture 5
+            //From lecture 5 slideshow
             TypeToken<List<Day>> token = new TypeToken<List<Day>>() {};
             List<Day> allDays = gson.fromJson(jsonDays, token.getType());
             BookOfDays days = BookOfDays.getInstance();
