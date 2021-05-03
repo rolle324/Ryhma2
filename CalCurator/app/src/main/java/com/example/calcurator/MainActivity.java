@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         EditText inputDate = (EditText) findViewById(R.id.inputDate);
         //https://stackoverflow.com/questions/17672150/how-to-show-current-date-in-edittext-view
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-        inputDate.setText(dateFormat.format(new Date()));
+        inputDate.setText(dateFormat.format(new Date()));  // saa nykyisen päivämäärän textView
 
         updateCalories();
     }
@@ -63,14 +63,14 @@ public class MainActivity extends AppCompatActivity {
      */
     public void saveDay(View view) {
         EditText inputDate = (EditText) findViewById(R.id.inputDate);
-        EditText inputMeal = (EditText) findViewById(R.id.inpuMeal);
+        EditText inputMeal = (EditText) findViewById(R.id.inpuMeal);   //Hakee id:t
         EditText inputCalories = (EditText) findViewById(R.id.inputCalories);
 
         this.date = inputDate.getText().toString();
         if(this.date.isEmpty()) {
             this.date = "empty";
         }
-        this.meal = inputMeal.getText().toString();
+        this.meal = inputMeal.getText().toString();   //Laittaa string empty, jos ei kirjoita mitään
         if(this.meal.isEmpty()) {
             this.meal = "empty";
         }
@@ -82,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         TextView tv = (TextView) findViewById(R.id.tvMealWarning);
-        if(this.date.contains("empty") || this.meal.contains("empty") || this.calories == 0) {
+        if(this.date.contains("empty") || this.meal.contains("empty") || this.calories == 0) {   //Checkkaa onko varmasti kaikkiin palkkeihin kirjoitettu
             tv.setText("Täytä kaikki kohdat.");
         } else {
             save.saveMeal(date, meal, calories);
@@ -95,6 +95,8 @@ public class MainActivity extends AppCompatActivity {
      * Moves to Main Activity
      * @param view
      */
+
+    //NAPIT
     public void goToCalcurator(View view) {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
@@ -130,7 +132,7 @@ public class MainActivity extends AppCompatActivity {
             tvIntake.setText("0");
         } else {
             int i = days.getAllDays().size() - 1;
-            tvIntake.setText(Integer.toString(days.getDay(i).getCalories()));
+            tvIntake.setText(Integer.toString(days.getDay(i).getCalories())); 
         }
     }
 
