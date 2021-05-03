@@ -44,11 +44,14 @@ private static final BookOfDays BookOfDays = new BookOfDays();
      * @return
      */
 
-
     public Day getDay(int indexOfDay){
         return this.allDays.get(indexOfDay);
     }
 
+    /**
+     * Sets the list of days
+     * @param list
+     */
     public void setAllDays(List<Day> list) {
         this.allDays = list;
     }
