@@ -16,7 +16,7 @@ public class Day {
 
     //Rakentaja
     public Day(String date, String meal, int calories) {
-        Calendar calendar = Calendar.getInstance();
+        Calendar calendar = Calendar.getInstance();     // Hakee ajan millon ruoka on laitettu
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("hh:mm:ss a");
         String dateTime = simpleDateFormat.format(calendar.getTime());
 

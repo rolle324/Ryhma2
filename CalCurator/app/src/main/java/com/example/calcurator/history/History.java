@@ -23,8 +23,8 @@ public class History extends AppCompatActivity {
 
         //Initializing ListView
         ListView lv = findViewById(R.id.lvHistory);
-        BookOfDays days = BookOfDays.getInstance();
-        lv.setAdapter(new ArrayAdapter<Day>(this,
+        BookOfDays days = BookOfDays.getInstance();  //Viittaus singletoniin
+        lv.setAdapter(new ArrayAdapter<Day>(this,   //List adapter, joka kerää objekteja listView.
                 android.R.layout.simple_expandable_list_item_1,
                 days.getAllDays()));
 
@@ -32,8 +32,8 @@ public class History extends AppCompatActivity {
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l){
-                Intent nextActivity = new Intent(History.this, HistoryDetails.class);
-                nextActivity.putExtra("HistoryIndex", i);
+                Intent nextActivity = new Intent(History.this, HistoryDetails.class); //Tekee uuden intent
+                nextActivity.putExtra("HistoryIndex", i); //Add information to Intent
                 startActivity(nextActivity);
             }
         });

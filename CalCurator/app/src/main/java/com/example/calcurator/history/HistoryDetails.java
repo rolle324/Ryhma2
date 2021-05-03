@@ -17,13 +17,14 @@ public class HistoryDetails extends AppCompatActivity {
         setContentView(R.layout.activity_history_details);
 
         //Reading index of day.
-        Bundle bundle = getIntent().getExtras();
-        int index = bundle.getInt("HistoryIndex");
+        Bundle bundle = getIntent().getExtras(); //hakee intent ja siihen tiedot
+        int index = bundle.getInt("HistoryIndex");   //Laittaa indexiin, historyIndexin
 
         //Writing all days into the ListView
         TextView tv= findViewById(R.id.tvDetails);
-        BookOfDays days = BookOfDays.getInstance();
-        Day day = days.getDay(index);
-        tv.setText(day.getAllMeals());
+        BookOfDays days = BookOfDays.getInstance(); //Viittaus singletoniin
+
+        Day day = days.getDay(index);  //Hakee tietyn päivän
+        tv.setText(day.getAllMeals()); //Laittaa sinne kaikki tietyn päivän tiedot
     }
 }
