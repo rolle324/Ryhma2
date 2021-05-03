@@ -132,7 +132,7 @@ public class MainActivity extends AppCompatActivity {
             tvIntake.setText("0");
         } else {
             int i = days.getAllDays().size() - 1;
-            tvIntake.setText(Integer.toString(days.getDay(i).getCalories())); 
+            tvIntake.setText(Integer.toString(days.getDay(i).getCalories()));
         }
     }
 
@@ -143,10 +143,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onPause() {
         super.onPause();
         Calculator recommendation = Calculator.getInstance();
-        BookOfDays days = BookOfDays.getInstance();
-        String jsonDays = gson.toJson(days.getAllDays());
+        BookOfDays days = BookOfDays.getInstance();  //referenssi singletonista
+        String jsonDays = gson.toJson(days.getAllDays());     //Muuttaa Arrayn json stringiksi
 
-        SharedPreferences prefPut = getSharedPreferences("Save", Activity.MODE_PRIVATE);
+        SharedPreferences prefPut = getSharedPreferences("Save", Activity.MODE_PRIVATE);  //Tallentaa shared preferences
         SharedPreferences.Editor prefEditor = prefPut.edit();
         prefEditor.putInt("Recommendation", recommendation.getRecommendation());
         prefEditor.putString("Days", jsonDays);
@@ -162,9 +162,9 @@ public class MainActivity extends AppCompatActivity {
         if (!jsonDays.equals("null")) {
             //From lecture 5 slideshow
             TypeToken<List<Day>> token = new TypeToken<List<Day>>() {};
-            List<Day> allDays = gson.fromJson(jsonDays, token.getType());
+            List<Day> allDays = gson.fromJson(jsonDays, token.getType());  //String takaisin Array:ksi
             BookOfDays days = BookOfDays.getInstance();
-            days.setAllDays(allDays);
+            days.setAllDays(allDays); // Lataa päivät
         }
     }
 

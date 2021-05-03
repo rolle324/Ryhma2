@@ -37,7 +37,7 @@ public class Day {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("hh:mm:ss a");
         String dateTime = simpleDateFormat.format(calendar.getTime());
 
-        this.allMeals = this.allMeals + meal + ": " + calories + " kcal " + dateTime + "\n\n" ;
+        this.allMeals = this.allMeals + meal + ": " + calories + " kcal " + dateTime + "\n\n" ;   //Miten tiedot muodostetaan HistoryDetails
         this.totalCalories = totalCalories + calories;
     }
 
